@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="jumbotron">
+	<div class="container">
+		<h1>Produits de la catégorie {{categorie.libelle}}</h1>
+		<p>{{categorie.description}}</p>
+		<a class="btn btn-info" href="#">Page d'accueil</a>
+	</div>
+</div>
+<div class="row">
+	{% for prd in produits %}
+	<div class="col-sm-4">
+		<div class="thumbnail">
+			<img src="{{prd.image}}" alt="">
+			<div class="caption text-center">
+				<h3>{{prd.libelle}}</h3>
+				<p>{{prd.description}}</p>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

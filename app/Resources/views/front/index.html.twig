@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Liste des catégories</h1>
+<div class="row">
+	{% for cat in categories %}
+	<div class="col-sm-4">
+		<div class="thumbnail">
+			<img src="{{cat.image}}" alt="">
+			<div class="caption text-center">
+				<h3>{{cat.libelle}}</h3>
+				<a href="{{path('eshop_categorie', {id: cat.id})}}" class="btn btn-primary">Produits</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
